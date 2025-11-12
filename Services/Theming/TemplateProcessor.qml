@@ -309,6 +309,7 @@ Singleton {
     script += `if [ -f '${userConfigPath}' ]; then\n`
     script += `  cat > '${tempJsonPathEsc}' << 'EOF'\n`
     script += JSON.stringify({
+                               "is_dark_mode": Settings.data.colorSchemes.darkMode,
                                "colors": palette
                              }, null, 2) + "\n"
     script += "EOF\n"
